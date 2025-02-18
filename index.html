@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitJourney AI</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <script type="importmap">
+      {
+        "imports": {
+          "google/generative-ai": "https://esm.run/@google/generative-ai"
+        }
+      }
+    </script>
+
+    <div class="landing_page">
+      <img class="app_logo" src="App logo.png" />
+      <h1 class="title">FitJourney AI</h1>
+      <p class="description">
+        FitJourney AI is your smart fitness companion that tracks workouts,
+        analyzes progress, and provides AI-powered recommendations to help you
+        reach your fitness goals efficiently.
+      </p>
+    </div>
+
+    <div class="form">
+      <form class="user_form">
+        <h2>Enter Your Details</h2>
+        <label>Full Name: <input type="text" id="full-name" required /></label>
+        <label>Age: <input type="number" id="age" required /></label>
+        <label>Height (cm): <input type="number" id="height" required /></label>
+        <label
+          >Current Weight (kg):
+          <input type="number" id="current-weight" required
+        /></label>
+        <label
+          >Target Weight (kg): <input type="number" id="target-weight" required
+        /></label>
+        <label
+          >Start Date: <input type="date" id="start-date" required
+        /></label>
+        <label>End Date: <input type="date" id="end-date" required /></label>
+        <button type="submit" class="save_button">Save</button>
+      </form>
+
+      <!-- User Summary -->
+      <div class="user_summary">
+        <h2>User Profile</h2>
+        <p><strong>Full Name:</strong><span id="summary-full-name"></span></p>
+        <p><strong>Age:</strong><span id="summary-age"></span></p>
+        <p><strong>Height:</strong><span id="summary-height"></span></p>
+        <p>
+          <strong>Current Weight:</strong>
+          <span id="summary-current-weight"></span>
+        </p>
+        <p>
+          <strong>Target Weight:</strong>
+          <span id="summary-target-weight"></span>
+        </p>
+        <p>
+          <strong>Start Date:</strong> <span id="summary-start-date"></span>
+        </p>
+        <p><strong>End Date:</strong> <span id="summary-end-date"></span></p>
+        <button type="submit" class="edit_button">Edit</button>
+      </div>
+    </div>
+
+    <div class="container-3">
+      <div class="container-4">
+        <form id="workout-form">
+          <label>Workout Date:</label>
+          <input type="date" id="date" required />
+
+          <label>Workout Type:</label>
+          <select id="workout-type">
+            <option value="Walking">Walking</option>
+            <option value="Running">Running</option>
+            <option value="Cycling">Cycling</option>
+          </select>
+
+          <label>Distance (m):</label>
+          <input type="number" step="any" id="distance" required />
+
+          <label>Time (min):</label>
+          <input type="number" step="any" id="time" required />
+
+          <label>Calories Burned:</label>
+          <input type="number" step="any" id="calories" required />
+
+          <button type="submit" class="add_button">Add Workout</button>
+        </form>
+
+        <div class="workout_summary">
+          <h3>Workout Summary</h3>
+
+          <div id="summary">
+            <p>
+              <strong>Total Distance:</strong>
+              <span id="total-distance"></span>
+            </p>
+            <p><strong>Total Time:</strong> <span id="total-time"></span></p>
+            <p>
+              <strong>Total Calories:</strong>
+              <span id="total-calories"></span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-2">
+        <div class="filter_workout">
+          <h3>Filter</h3>
+          <div class="checkbox-container">
+            <input type="checkbox" id="filter-walking" value="Walking" />
+            Walking
+            <input type="checkbox" id="filter-running" value="Running" />
+            Running
+            <input type="checkbox" id="filter-cycling" value="Cycling" />
+            Cycling
+          </div>
+        </div>
+
+        <h3>Workout Entries</h3>
+        <div class="workout_entries">
+          <div id="workout-container"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ai_container">
+      <div class="ai_recommendation">
+        <h3>Recommendation</h3>
+        <div class="reco_container">
+          <!-- AI recommendation will be inserted here -->
+        </div>
+        <button id="get-recommendation">Get Recommendation</button>
+      </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
