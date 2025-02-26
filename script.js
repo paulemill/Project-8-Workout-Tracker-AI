@@ -1,5 +1,3 @@
-// AIzaSyBzZpHJrVSwicXJHTNMHoQ6n4YmQYd7s28
-
 // Array to store workouts
 let workouts = [];
 
@@ -348,7 +346,7 @@ Walking - XX meters - XX min - XX cal -- XX times per week
     console.log(prompt);
 
     // Get the AI model
-    const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
+    const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash-001' });
 
     // Call AI API to generate content
     const result = await model.generateContent(prompt);
